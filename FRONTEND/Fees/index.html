@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Fees Selector </title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <link rel="stylesheet" href="/Fees/style.css">
+</head>
+<body>
+    <!-- HEADER / NAVIGATION -->
+     <header>
+        <div class="nav-container">
+            <div>
+                <span>CampusMatch</span>
+            </div>
+            <span>
+                Student Portal 2026
+            </span>
+        </div>
+    </header>
+    <main class="container"> 
+<div class="info-box">
+    <h3>Important Information</h3>
+
+    <p>
+        The fees shown are the estimated total cost for
+        <strong>4 years</strong>, including
+        <strong>tuition fees + hostel/accommodation</strong>.
+    </p>
+
+    <p>
+        <strong>Note:</strong> There are no colleges in our database
+        with fees between <strong>₹12L and ₹16L</strong>, so this range
+        is not available.
+    </p>
+</div>
+    <div class="card">
+        <!-- Header text instructions -->
+        <div class="card-header">
+            <h2> Select Your Total Budget </h2>
+        </div>
+
+         <form class="fees-form" action="/fees" method="POST">
+
+            <div class="dropdown-container">
+        <select id="fees" name="fees" class="dropdown-button" required>
+            <option value="" disabled selected>Select here</option>
+            <option value="Upto 5L"> Upto 5L </option>
+            <option value="5L to 9L"> 5L to 9L </option>
+            <option value="9L to 12L"> 9L to 12L </option>
+            <option value="16L to 19L"> 16L to 19L </option>
+            <option value="19L to 21L"> 19L to 21L </option>
+            <option value="Above 21L"> Above 21L </option>
+        </select>
+    </div>
+     <button type="submit" class="btn-continue"> Continue </button>
+    </form>
+    </div>
+    </main>
+     <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p> &copy; 2026 CampusMatch. </p>
+            <p> Helping Students Make Better College Decisions </p>
+        </div>
+    </footer>
+</body>
+</html>

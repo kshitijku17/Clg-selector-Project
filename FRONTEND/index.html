@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusMatch | Find Your Perfect College</title>
+    <style>
+        /* CSS Variables to make custom colors easy to manage */
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #475569;
+            --text-dark: #0f172a;
+            --border-color: #e2e8f0;
+        }
+        /* body.dark-theme {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #94a3b8;
+            --text-dark: #f8fafc;
+            --border-color: #334155;
+            --badge-bg: #312e81;
+            --btn-close-bg: #334155;
+            --btn-close-hover: #475569;
+        } */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+           body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+         /* NAVIGATION BAR */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1.2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* HERO / FRONTPAGE CONTAINER */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+         .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 2.5rem;
+        }
+          /* THE START BUTTON */
+        .btn-start {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.1rem 2.2rem;
+            border-radius: 0.85rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            background-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.3);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-start:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -5px rgba(79, 70, 229, 0.4);
+        }
+        /* FEATURE HIGHLIGHTS GRID */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            margin-top: 4.5rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 1.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+        }
+        .feature-card ul {
+        text-align: left;
+        display: inline-block;
+        }
+
+        .feature-card i {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: #ffffff;
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem 1rem;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+          /* MOBILE STYLING RESPONSIVENESS */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                margin-top: 3rem;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+      <!-- HEADER / NAVIGATION -->
+     <header>
+        <div class="nav-container">
+            <div>
+                <span>CampusMatch</span>
+            </div>
+            <span>
+                Student Portal 2026
+            </span>
+        </div>
+    </header>
+    <!-- MAIN FRONTPAGE -->
+    <main class="container">
+        <div class="hero">
+            <h1>
+                Find the Right College for You <br/>
+            </h1>
+            <h2> <strong> 30+ Colleges, 5 States, AI-Powered Recommendations </strong> </h2>
+            <p>
+               Discover colleges that match your location preference, budget, and career goals.
+                <br/> <strong> NOTE: </strong>IITs, NITs, IIITs, and other premier institutes have not been included in this website because they are already among the top choices. If you have the opportunity to join one.
+            </p>
+
+            <div>
+                  <a href="/location">
+                <button type="button" class="btn-start">
+                    <span>Start College Matching</span>
+                </button>
+                 </a>
+            </div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>College Location</h3>
+                <p> Choose your 4 year degree location. </p>
+                    <ul>
+                        <li>
+                          Mountain regions  
+                        </li>
+                        <li>
+                            Chill in Outskirts
+                        </li>
+                        <li>
+                           City life fun 
+                        </li>
+                    </ul>
+                    </div>
+            <div class="feature-card">
+                <h3>Cost Of Degree </h3>
+                <p>Set your total budget. </p>
+                <p> <strong> Includes: </strong> 
+                    Tuition Fee & Hostel/Accommodation
+                </p>
+                    <p> This helps us recommend colleges that fit your budget comfortably. </p>
+            </div>
+            <div class="feature-card">
+                <h3>ROI (Return on Investment) </h3>
+                <p> Select your placement preference. </p>
+                <p>Placement estimates are based on
+                Average/Median packages available
+                for each college.</p>
+            </div>
+        </div>
+         <ol><strong>Things to remember: </strong>
+            <li> Colleges from Jammu & Kashmir, Himachal Pradesh, Uttarakhand, Haryana, and Punjab.</li>
+            <li> Fees include Tuition + Hostel/Accommodation.</li>
+            <li> Placement values are based on Average/Median packages.</li>
+            <li> More states and colleges will be added in future updates. </li>
+        </ol>    
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p> &copy; 2026 CampusMatch. </p>
+            <p> Helping Students Make Better College Decisions </p>
+        </div>
+    </footer>
+
+</body>
+</html>

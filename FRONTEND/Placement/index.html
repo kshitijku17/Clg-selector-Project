@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Placement Selector </title>
+    <link rel="stylesheet" href="/Placement/style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>    <!-- HEADER / NAVIGATION -->
+     <header>
+        <div class="nav-container">
+            <div>
+                <span>CampusMatch</span>
+            </div>
+            <span>
+                Student Portal 2026
+            </span>
+        </div>
+    </header>
+    <main class="container"> 
+<div class="info-box">
+    <h3>Important Information</h3>
+
+    <p> Placement figures are based on the <br>
+  <strong>  Average/Median packages (LPA) </strong>
+    <br> reported by each college. 
+    </p>
+</div>
+    <div class="card">
+        <!-- Header text instructions -->
+        <div class="card-header">
+            <h2> Select Expected Average Package </h2>
+        </div>
+
+         <form class="placement" action="/placement" method="POST">
+
+            <div class="dropdown-container">
+        <select id="placement" name="placement" class="dropdown-button" required>
+            <option value="" disabled selected>Select here</option>
+            <option value="Upto 5LPA"> Upto 5LPA </option>
+            <option value="5LPA to 7LPA"> 5LPA to 7LPA </option>
+            <option value="7LPA to 9LPA"> 7LPA to 9LPA </option>
+            <option value="Above 9LPA"> Above 9LPA </option>
+        </select>
+    </div>
+     <button type="submit" id="button" class="btn-continue"> Show Recommendations </button>
+    </form>
+    </div>
+    </main>
+     <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p> &copy; 2026 CampusMatch. </p>
+            <p> Helping Students Make Better College Decisions </p>
+        </div>
+    </footer>
+</body>
+</html>

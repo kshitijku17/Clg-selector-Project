@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Selector </title>
+   <link rel="stylesheet" href="/Location/style.css">
+   <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <!-- HEADER / NAVIGATION -->
+     <header>
+        <div class="nav-container">
+            <div>
+                <span>CampusMatch</span>
+            </div>
+            <span>
+                Student Portal 2026
+            </span>
+        </div>
+    </header>
+    <main class="container"> 
+<div class="info-box">
+    <h3>Important Information</h3>
+
+    <p>This portal currently includes colleges from <strong> 5 Indian states. </strong> 
+    </p>
+
+    <p>Currently available states:<br>
+   <strong> Jammu & Kashmir, Himachal Pradesh, Uttarakhand, Punjab and Haryana. </strong> 
+    </p>
+</div>
+        <div class="card">
+            <!-- Header text instructions -->
+            <div class="card-header">
+                <h2>Select Your Preferred State</h2>
+            </div>
+            
+            <form class="location-form" action="/location" method="POST">
+                
+                <div class="dropdown-container">
+                    <select id="location" name="location" class="dropdown-button" required>
+                        <option value="" disabled selected>Select here</option>
+                        <option value="J&K">Jammu & Kashmir</option>
+                        <option value="H.P">Himachal Pradesh</option>
+                        <option value="U.K">Uttarakhand</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Haryana">Haryana</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-continue"> Continue </button>
+            </form>
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p> &copy; 2026 CampusMatch. </p>
+            <p> Helping Students Make Better College Decisions </p>
+        </div>
+    </footer>
+</body>
+</html>

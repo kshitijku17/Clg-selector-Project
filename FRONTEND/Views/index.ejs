@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> RESULT PAGE </title>
+  <style>
+    /* Styling variables for easy updates */
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --accent-color: #3b82f6;
+      --border-color: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+    /* Reset spacing defaults */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+body{
+    background:var(--bg-color);
+    color:var(--text-main);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+}
+header{
+    background:#fff;
+    border-bottom:1px solid var(--border-color);
+    position:sticky;
+    top:0;
+    z-index:100;
+    width:100%;
+}
+  .nav-container{
+    max-width:1000px;
+    margin:auto;
+
+    padding:1.2rem 1rem;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    }
+    .container{
+    flex:1;
+
+    max-width:1250px;
+    width:100%;
+
+    margin:auto;
+
+    padding:40px 20px;
+    }
+    .page-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.page-title h1{
+    font-size:2.2rem;
+    font-weight:800;
+    margin-top:25px;
+}
+
+.info-box{
+    max-width:850px;
+    margin:0 auto 30px;
+
+    background:#fff;
+    border:1px solid var(--border-color);
+    border-radius:12px;
+
+    padding:20px 24px;
+
+    box-shadow:var(--shadow);
+}
+
+.info-box h3{
+    margin-bottom:10px;
+}
+
+.info-box p{
+    color:var(--text-muted);
+    margin-bottom:8px;
+    line-height:1.6;
+}
+
+.info-box p:last-child{
+    margin-bottom:0;
+}
+
+    /* The main horizontal row */
+    .horizontal-row{
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    justify-content:center;
+    flex-wrap:wrap;
+    }
+
+    /* Box Content Cards */
+    .box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+
+    flex: 1;
+    min-width: 300px;
+    max-width: 360px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: .25s;
+    }
+
+    .box:hover{
+    transform: translateY(-5px);
+    box-shadow:0 12px 20px rgba(0,0,0,.08);
+    }
+
+    .box h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .box p {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    }
+
+    /* Responsive scaling: stacks vertically on smaller screens (tablets/phones) */
+    @media(max-width:600px){
+
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+    }
+
+}
+
+/* FOOTER */
+footer {
+            background-color: #ffffff;
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem 1rem;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+  </style>
+</head>
+<body>
+     <!-- HEADER / NAVIGATION -->
+     <header>
+        <div class="nav-container">
+            <div>
+                <span>CampusMatch</span>
+            </div>
+            <span>
+                Student Portal 2026
+            </span>
+        </div>
+    </header>
+<main class="container">
+
+    <section class="page-title">
+
+        <div class="info-box">
+            <h3>Recommendation Summary</h3>
+
+            <p>
+                These colleges are recommended based on your selected
+                <strong>Location</strong>,
+                <strong>Budget</strong>, and
+                <strong>Placement Preference</strong>.
+            </p>
+            <p>
+            <strong>Note:</strong> While we try to match all of your preferences,
+            some recommendations may differ slightly in location, budget, or
+            placement package to provide the best overall college recommendations.
+            </p>
+            <p>
+                AI insights are generated to help you better understand
+                each college before making your decision.
+            </p>
+        </div>
+
+        <h1>Top 3 Recommended Colleges</h1>
+
+    </section>
+
+    <div class="horizontal-row">   
+          <% colleges.forEach(college => { %>
+            
+            <section class="box">
+              <h2><%= college.Name %></h2>
+              <p><strong>Location:</strong> <%= college.Location %></p>
+              <p><strong>Fees:</strong> ₹<%= college.Fees %></p>
+              <p><strong>Placement:</strong> <%= college.Placement %> LPA</p>
+              
+              <hr>
+              <h3> AI Insights </h3>
+              
+              <div class="ai-formatted-content" style="text-align: left; line-height: 1.5;">
+                <%- college.aiData %>
+              </div>
+            </section>
+            
+            <% }) %>
+    </div>
+</main>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p> &copy; 2026 CampusMatch. </p>
+            <p> Helping Students Make Better College Decisions </p>
+        </div>
+    </footer>
+
+<!-- <script>
+    // Because there are multiple boxes, we loop through all of them on the frontend
+    const displayElements = document.querySelectorAll('.ai-formatted-content');
+
+    rawElements.forEach((element, index) => {
+        const markdownText = element.innerText;
+        displayElements[index].innerHTML = marked.parse(markdownText);
+    });
+</script> -->
+</body>
+</html>
+<!-- <body>
+    <% colleges.forEach(college =>{%>
+    <h2><%= college.Name %></h2>
+    <p><%= college.Location %></p>
+    <p><%= college.Fees %></p>
+    <p><%= college.Placement %></p>
+    <p><%= college.score %></p>
+
+    <% }) %>
+</body>
+</html> -->
